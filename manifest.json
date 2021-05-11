@@ -1,0 +1,16 @@
+{
+    "name" : "Class links",
+    "description": "Extension to save the links of online school classes",
+    "version" : "1.0",
+    "manifest_version" : 3,
+    
+    "background": {
+        "service_worker" : "background.js"
+    },
+    
+    "permissions" : ["storage"],
+
+    "action" : {
+        "default_popup" : "index.html"
+    }
+}
