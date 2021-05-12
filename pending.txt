@@ -1,2 +1,0 @@
-Styling
-Add edit functonality in the extension itself

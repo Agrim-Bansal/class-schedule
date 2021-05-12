@@ -1,20 +1,15 @@
-url = 'https://api.airtable.com/v0/'
-base_ID = 'appWngR6w3r09OZyP'
+url = 'https://class-schedule-extension.agrimbansal.repl.co'
+url_ext = '/api'
 table=`Table%20${new Date().getDay()}`
-GOT_API_KEY = ""
 table_el_id = "table"
 
 async function refresh(){
-    chrome.storage.sync.get("API_KEY", async ({ API_KEY }) => {
-        GOT_API_KEY = API_KEY;
-        schedule = await get_data(API_KEY);
-        await set_data(schedule['records']);
-    });
+    schedule = await get_data();
+    await set_data(schedule['records']);
 };
 
-get_data = async function(API_KEY) {
-    console.log(API_KEY)
-    res = await fetch (`${url}${base_ID}/${table}?view=Grid%20view&api_key=${API_KEY}`);
+get_data = async function() {
+    res = await fetch (`${url}${url_ext}/${table}`);
     data = await res.json();
     console.log(data)
     return data
