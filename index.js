@@ -68,14 +68,16 @@ set_data = function(schedule) {
 
         join_cell = document.createElement('td');
         row.appendChild(join_cell);
-
         join_link = document.createElement('a');
         join_link.innerHTML = "Join Class";
         join_link.href = schedule[i]['fields']['Join Link'];
         join_link.target = "_blank"
-
         join_cell.appendChild(join_link)
         
+        timings = document.createElement('td');
+        timings.innerHTML = schedule[i]['fields']['From'] + " - " + schedule[i]['fields']['To']
+        row.appendChild(timings);
+        console.log(schedule[i]['fields']['From'] + " - " + schedule[i]['fields']['To'])
     }
 
 }
