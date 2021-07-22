@@ -50,3 +50,10 @@ a, a:visited
 .class-ongoing{
     color:green !important;
 }
+
+@media (max-width: 512px){
+    html{
+        width:100%;
+    }
+}
+
